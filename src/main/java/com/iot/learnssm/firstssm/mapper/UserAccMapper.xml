@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iot.learnssm.firstssm.mapper.UserAccMapper">
+
+
+    <select id="findItemsList" parameterType="com.iot.learnssm.firstssm.po.UserAcc"
+            resultType="com.iot.learnssm.firstssm.po.UserAcc">
+    SELECT useracc.* FROM useracc
+    </select>
+
+    <select id="findItemsById" parameterType="java.lang.Integer" resultType="com.iot.learnssm.firstssm.po.UserAcc">
+        SELECT * FROM useracc
+        where id=#{id}
+    </select>
+
+
+    <update id="updateItems" parameterType="com.iot.learnssm.firstssm.po.UserAcc" >
+     update useracc
+     set username=#{userscc.username}
+     where id=#{userscc.id}
+    </update>
+</mapper>
